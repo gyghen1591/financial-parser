@@ -7,15 +7,15 @@ st.set_page_config(page_title="專業財報分析助手", layout="wide")
 
 st.title("📊 專業財報分析 (含缺失數據自動檢測)")
 
-# 定義核心關鍵字
+# 擴充後的關鍵字，增加美股 10-K 兼容性
 KEYWORDS = {
-    "revenue": ["營業收入", "Total net sales", "营业收入", "Operating revenue"],
-    "cost_of_sales": ["營業成本", "Cost of sales", "营业成本"],
-    "receivables": ["應收帳款", "Accounts receivable", "应收账款"],
-    "payables": ["應付帳款", "Accounts payable", "应付账款"],
+    "revenue": ["營業收入", "Total net sales", "Total revenue", "Operating revenue", "營業收入淨額"],
+    "cost_of_sales": ["營業成本", "Cost of sales", "Cost of revenue", "Cost of goods sold"],
+    "receivables": ["應收帳款", "Accounts receivable", "Accounts receivable, net", "應收帳款淨額"],
+    "payables": ["應付帳款", "Accounts payable", "Accounts payable and accrued liabilities"],
     "current_assets": ["流動資產合計", "Total current assets", "流动资产合计"],
     "current_liabilities": ["流動負債合計", "Total current liabilities", "流动负债合计"],
-    "equity": ["權益總額", "Total equity", "所有者权益合计"]
+    "equity": ["權益總額", "Total equity", "Total shareholders' equity", "所有者权益合计"]
 }
 
 def clean_val(v):
